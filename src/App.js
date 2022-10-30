@@ -12,13 +12,23 @@ function App() {
       title: "first todo",
       status:true
     },
+    {
+      id: 2,
+      title: "second todo",
+      status:true
+    },
+    {
+      id: 3,
+      title: "third todo",
+      status:false
+    },
   ]);
 
   return (
     <div className="App">
       <Header />
       <AddTodo />
-      <TodoList />
+      <TodoList  todo={todo} setTodo={setTodo}/>
     </div>
   );
 }
