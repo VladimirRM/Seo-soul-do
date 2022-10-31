@@ -26,7 +26,10 @@ const TodoList = ({ todo, setTodo }) => {
         <div key={item.id}>
             {
             edit?
+            <div>
             <input/>
+            <button>Save</button>
+            </div>
              }
           <div>{item.title}</div>
           <button onClick={() => deleteTodo(item.id)}>Delete</button>
