@@ -10,6 +10,7 @@ const TodoList = ({ todo, setTodo }) => {
         if(item.id == id){
             item.status = !item.status
         }
+        return item
     })
     setTodo(newTodo)
   }
