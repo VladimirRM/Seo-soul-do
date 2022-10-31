@@ -14,6 +14,9 @@ const TodoList = ({ todo, setTodo }) => {
     })
     setTodo(newTodo)
   }
+    function editTodo(){
+        
+    }
 
   return (
     <div>
@@ -21,6 +24,7 @@ const TodoList = ({ todo, setTodo }) => {
         <div key={item.id}>
           <div>{item.title}</div>
           <button onClick={() => deleteTodo(item.id)}>Delete</button>
+          <button onClick={() => editTodo(item.id)}>Edit</button>
           <button onClick={() => statusTodo(item.id)}>Close/Open</button>
         </div>
       ))}
