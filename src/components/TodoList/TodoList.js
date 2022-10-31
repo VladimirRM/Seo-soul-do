@@ -11,7 +11,7 @@ const TodoList = ({ todo, setTodo }) => {
             item.status = !item.status
         }
     })
-    setTodo
+    setTodo(newTodo)
   }
 
   return (
