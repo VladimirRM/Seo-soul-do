@@ -1,9 +1,16 @@
-import React from "react";
+import React,{useState} from "react";
 
 const AddTodo = () => {
+       const [value,setValue]=useState()
+
+
+      function saveTodo(){
+
+      }
+
   return <div>
     <input placeholder="Enter todo"/>
-    <button>Save</button>
+    <button onClick={saveTodo}>Save</button>
   </div>;
 };
 
