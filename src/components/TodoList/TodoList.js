@@ -17,7 +17,7 @@ const TodoList = ({ todo, setTodo }) => {
     setTodo(newTodo)
   }
     function editTodo(id){
-       setEdit(true)    
+       setEdit(id)    
     }
 
   return (
