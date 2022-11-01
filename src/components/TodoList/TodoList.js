@@ -1,8 +1,8 @@
 import React,{useState} from "react";
 
 
- const [edit,setEdit]= useState(false)
 const TodoList = ({ todo, setTodo }) => {
+  const [edit,setEdit]= useState(false)
   function deleteTodo(id) {
     let newTodo = [...todo].filter(item=> item.id!=id)
     setTodo(newTodo)
@@ -17,7 +17,7 @@ const TodoList = ({ todo, setTodo }) => {
     setTodo(newTodo)
   }
     function editTodo(id){
-           
+       setEdit(true)    
     }
 
   return (
