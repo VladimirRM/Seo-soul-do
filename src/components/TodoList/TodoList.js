@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Row, Col, Button, FormControl } from "react-bootstrap";
+import s from '../TodoList/TodoList.module.css'
 
 const TodoList = ({ todo, setTodo }) => {
   const [edit, setEdit] = useState(null);
@@ -37,7 +38,7 @@ const TodoList = ({ todo, setTodo }) => {
   return (
     <div>
       {todo.map((item) => (
-        <div key={item.id}>
+        <div key={item.id} className={s.listItems}>
           {edit == item.id ? (
             <div>
               <input value={value} onChange={(e) => setValue(e.target.value)} />
@@ -47,7 +48,7 @@ const TodoList = ({ todo, setTodo }) => {
           )}
           {edit == item.id ? (
             <div>
-              <Button className={s.btn}
+              <Button 
                 variant="outline-secondary"
                 onClick={() => saveTodo(item.id)}
               >
@@ -62,13 +63,13 @@ const TodoList = ({ todo, setTodo }) => {
               >
                 Delete
               </Button>
-              <Button
+              <Button className={s.btn}
                 variant="outline-secondary"
                 onClick={() => editTodo(item.id, item.title)}
               >
                 Edit
               </Button>
-              <Button
+              <Button className={s.btn}
                 variant="outline-secondary"
                 onClick={() => statusTodo(item.id)}
               >
