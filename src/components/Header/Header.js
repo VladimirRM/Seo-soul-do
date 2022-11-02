@@ -1,9 +1,9 @@
 import React from 'react' 
-import './Header.module.css'
+import s from'./Header.module.css'
 
 const Header = () => {
   return (
-    <div>
+    <div className={s.root}>
       Todo List 
     </div>
   )
