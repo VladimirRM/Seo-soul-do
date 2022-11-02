@@ -30,8 +30,10 @@ const TodoList = ({ todo, setTodo }) => {
       if(item.id == id){
         item.title = value
       }
+      return item
     })
     setTodo(newTodo)
+    setEdit(null)
   }
 
   return (
