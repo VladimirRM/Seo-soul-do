@@ -20,8 +20,9 @@ const TodoList = ({ todo, setTodo }) => {
     });
     setTodo(newTodo);
   }
-  function editTodo(id) {
+  function editTodo(id,title) {
     setEdit(id);
+    setValue(title)
   }
 
   return (
@@ -42,7 +43,7 @@ const TodoList = ({ todo, setTodo }) => {
           ) : (
             <div>
               <button onClick={() => deleteTodo(item.id)}>Delete</button>
-              <button onClick={() => editTodo(item.id)}>Edit</button>
+              <button onClick={() => editTodo(item.id,item.title)}>Edit</button>
               <button onClick={() => statusTodo(item.id)}>Close/Open</button>
             </div>
           )}
