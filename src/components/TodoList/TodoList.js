@@ -31,14 +31,14 @@ const TodoList = ({ todo, setTodo }) => {
         <div key={item.id}>
           {edit == item.id ? (
             <div>
-              <input onChange={} value={} />
+              <input  value={value} onChange={(e)=>setValue(e.target.value)}/>
             </div>
           ) : (
             <div>{item.title}</div>
           )}
           {edit == item.id ? (
             <div>
-              <button>Save</button>
+              <button onClick>Save</button>
             </div>
           ) : (
             <div>
