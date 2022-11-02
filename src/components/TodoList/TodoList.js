@@ -25,7 +25,7 @@ const TodoList = ({ todo, setTodo }) => {
         <div key={item.id}>
           {edit == item.id ? (
             <div>
-              <input />
+              <input onChange={} value={} />
             </div>
           ) : (
             <div>{item.title}</div>
