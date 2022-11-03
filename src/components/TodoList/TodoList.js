@@ -1,6 +1,10 @@
 import React, { useState } from "react";
-import { Row, Col, Button, FormControl } from "react-bootstrap";
+import {  Button, FormControl } from "react-bootstrap";
 import s from '../TodoList/TodoList.module.css'
+
+
+
+
 
 const TodoList = ({ todo, setTodo }) => {
   const [edit, setEdit] = useState(null);
@@ -52,7 +56,7 @@ const TodoList = ({ todo, setTodo }) => {
                 variant="outline-secondary"
                 onClick={() => saveTodo(item.id)}
               >
-                Save
+                < input/>
               </Button>
             </div>
           ) : (
