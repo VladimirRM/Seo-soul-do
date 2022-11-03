@@ -1,10 +1,6 @@
 import React, { useState } from "react";
-import {  Button, FormControl } from "react-bootstrap";
-import s from '../TodoList/TodoList.module.css'
-
-
-
-
+import { Button} from "react-bootstrap";
+import s from "../TodoList/TodoList.module.css";
 
 const TodoList = ({ todo, setTodo }) => {
   const [edit, setEdit] = useState(null);
@@ -52,11 +48,11 @@ const TodoList = ({ todo, setTodo }) => {
           )}
           {edit == item.id ? (
             <div>
-              <Button 
+              <Button
                 variant="outline-secondary"
                 onClick={() => saveTodo(item.id)}
               >
-                < input/>
+                <input />
               </Button>
             </div>
           ) : (
@@ -67,13 +63,15 @@ const TodoList = ({ todo, setTodo }) => {
               >
                 Delete
               </Button>
-              <Button className={s.btn}
+              <Button
+                className={s.btn}
                 variant="outline-secondary"
                 onClick={() => editTodo(item.id, item.title)}
               >
                 Edit
               </Button>
-              <Button className={s.btn}
+              <Button
+                className={s.btn}
                 variant="outline-secondary"
                 onClick={() => statusTodo(item.id)}
               >
