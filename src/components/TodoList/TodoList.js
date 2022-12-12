@@ -23,8 +23,15 @@ const TodoList = ({ todo, setTodo }) => {
     setEdit(id);
     setValue(title);
   }
-  function saveTodo(){
-    
+  function saveTodo(id) {
+    let newTodo = [...todo].map((item) => {
+      if (item.id == id) {
+        item.title = value;
+      }
+      return item;
+    });
+    setTodo(newTodo);
+    setEdit(null)
   }
 
   return (
@@ -44,7 +51,7 @@ const TodoList = ({ todo, setTodo }) => {
           )}
           {edit == item.id ? (
             <div>
-              <button onClick={saveTodo}>Save</button>
+              <button onClick={() => saveTodo(item.id)}>Save</button>
             </div>
           ) : (
             <div>
