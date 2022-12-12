@@ -1,6 +1,8 @@
-import React from "react";
+import React,{useState} from "react";
 
 const TodoList = ({ todo, setTodo }) => {
+const [edit,setEdit]=useState(null)
+
   function deleteTodo(id) {
     let newTodo = [...todo].filter((item) => item.id != id);
     setTodo(newTodo);
@@ -16,11 +18,22 @@ const TodoList = ({ todo, setTodo }) => {
     setTodo(newTodo);
   }
 
+  function editTodo (id){
+   setEdit(id)
+  }
+
   return (
     <div>
       {todo.map((item) => (
         <div key={item.id}>
+          {
+            edit == item.id? <div>
+              <input type="text" />
+                   <button>Save</button>
+                   </div>:
           <div>{item.title}</div>
+
+          }
           <button onClick={() => deleteTodo(item.id)}>Delete</button>
           <button onClick={() => editTodo(item.id)}>Edit</button>
           <button onClick={() => statusTodo(item.id)}>Close/Open</button>
