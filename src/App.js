@@ -31,8 +31,8 @@ const App = () => {
   return (
     <div>
      <Header/>
-     <TodoList/>
      <AddTodo/>      
+     <TodoList todo={todo} setTodo={setTodo}/>
     </div>
   )
 }
