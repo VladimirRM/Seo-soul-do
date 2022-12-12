@@ -23,6 +23,9 @@ const TodoList = ({ todo, setTodo }) => {
     setEdit(id);
     setValue(title);
   }
+  function saveTodo(){
+    
+  }
 
   return (
     <div>
@@ -30,14 +33,18 @@ const TodoList = ({ todo, setTodo }) => {
         <div key={item.id}>
           {edit == item.id ? (
             <div>
-              <input type="text" value={value} />
+              <input
+                type="text"
+                value={value}
+                onChange={(e) => setValue(e.target.value)}
+              />
             </div>
           ) : (
             <div>{item.title}</div>
           )}
           {edit == item.id ? (
             <div>
-              <button>Save</button>
+              <button onClick={saveTodo}>Save</button>
             </div>
           ) : (
             <div>
