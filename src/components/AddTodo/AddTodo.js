@@ -1,10 +1,19 @@
 import React, { useState } from "react";
 
-const AddTodo = () => {
+const AddTodo = ({ todo, setTodo }) => {
   const [value, setValue] = useState("");
 
-function saveTodo
-
+  function saveTodo() {
+    setTodo([
+      ...todo,
+      {
+        id: Math.random(),
+        title: value,
+        status: true,
+      },
+    ]);
+    setValue("");
+  }
 
   return (
     <div>
