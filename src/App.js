@@ -3,7 +3,7 @@ import Header from './components/Header/Header'
 import TodoList from './components/TodoList/TodoList'
 import AddTodo from './components/AddTodo/AddTodo'
 import './App.css'
-import { First } from 'react-bootstrap/esm/PageItem'
+
 
 
 const App = () => {
@@ -31,7 +31,7 @@ const App = () => {
   return (
     <div>
      <Header/>
-     <AddTodo/>      
+     <AddTodo setTodo={setTodo} todo={todo}/>      
      <TodoList todo={todo} setTodo={setTodo}/>
     </div>
   )
