@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+// import React,{useState} from 'react'
 
 const AddTodo = ({todo,setTodo}) => {
    const [value,setValue]= useState('')
@@ -22,4 +22,4 @@ const AddTodo = ({todo,setTodo}) => {
   )
 }
 
-export default AddTodo
+// export default AddTodo

@@ -1,9 +1,10 @@
 import React from "react";
 
-const TodoList = ({ todo, setTodo }) => {
-  function deleteTodo(id) {
-    setTodo([...todo].filter((item) => item.id != id));
-  }
+const TodoList = ({todo,setTodo}) => {
+   function deleteTodo (id){
+    
+   }
+
 
   return (
     <div>
