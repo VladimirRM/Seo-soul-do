@@ -3,6 +3,11 @@ import React,{useState} from 'react'
 const AddTodo = () => {
 const [value,setValue] = useState('')
 
+
+function saveTodo(){
+  
+}
+
   return (
     <div>
       <input type="text"
