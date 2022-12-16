@@ -22,7 +22,7 @@ const AddTodo = ({ todo, setTodo }) => {
         placeholder="Enter something..."
         onChange={(e) => setValue(e.target.value)}
       />
-      <button onClick={saveTodo}></button>
+      <button onClick={saveTodo}>Save</button>
     </div>
   );
 };
