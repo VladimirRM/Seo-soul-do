@@ -6,15 +6,18 @@ const TodoList = ({ todo, setTodo }) => {
     setTodo(newTodo);
   }
 
+  
+
   return (
     <div>
       {
+        todo.map(item=>(
         <div key={item.id}>
           <div>{item.title}</div>
           <button onClick={() => deleteTodo(item.id)}>Delete</button>
           <button onClick={() => statusTodo(item.id)}>Close/Open</button>
         </div>
-      }
+      ))}
     </div>
   );
 };
