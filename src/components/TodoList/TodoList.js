@@ -6,12 +6,17 @@ const TodoList = ({ todo, setTodo }) => {
     setTodo(newTodo);
   }
 
-  
+  function statusTodo(id) {
+    const newTodo = [...todo].filter((item) => {
+      if (item.id === id) {
+        item.status = !item.status;
+      }
+    });
+  }
 
   return (
     <div>
-      {
-        todo.map(item=>(
+      {todo.map((item) => (
         <div key={item.id}>
           <div>{item.title}</div>
           <button onClick={() => deleteTodo(item.id)}>Delete</button>
