@@ -20,6 +20,10 @@ const TodoList = ({ todo, setTodo }) => {
   function editTodo(id, title) {
     setEdit(id);
     setValue(title);
+  } 
+
+  function saveTodo(){
+    
   }
 
   return (
@@ -28,7 +32,7 @@ const TodoList = ({ todo, setTodo }) => {
         <div key={item.id}>
           {edit == item.id ? (
             <div>
-              <input value={value} />
+              <input value={value}  onChange={(e)=>setValue(e.target.value)}/>
             </div>
           ) : (
             <div>{item.title}</div>
@@ -36,7 +40,7 @@ const TodoList = ({ todo, setTodo }) => {
 
           {edit == item.id ? (
             <div>
-              <button>Save</button>
+              <button onClick={saveTodo}>Save</button>
             </div>
           ) : (
             <div>
