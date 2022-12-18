@@ -28,8 +28,10 @@ const TodoList = ({ todo, setTodo }) => {
       if (item.id === id) {
         item.title = value;
       }
+      return item;
     });
     setTodo(newTodo);
+    setEdit(null);
   }
 
   return (
@@ -43,15 +45,24 @@ const TodoList = ({ todo, setTodo }) => {
                 value={value}
                 onChange={(e) => setValue(e.target.value)}
               />
-              <button onClick={saveTodo}>Save</button>
             </div>
           ) : (
             <div>{item.title}</div>
           )}
 
-          <button onClick={() => deleteTodo(item.id)}>Delete</button>
-          <button onClick={() => editTodo(item.id, item.title)}>Delete</button>
-          <button onClick={() => statusTodo(item.id)}>Open/Close</button>
+          {edit === id ? (
+            <div>
+              <button onClick={saveTodo}>Save</button>
+            </div>
+          ) : (
+            <div>
+              <button onClick={() => deleteTodo(item.id)}>Delete</button>
+              <button onClick={() => editTodo(item.id, item.title)}>
+                Delete
+              </button>
+              <button onClick={() => statusTodo(item.id)}>Open/Close</button>
+            </div>
+          )}
         </div>
       ))}
     </div>
