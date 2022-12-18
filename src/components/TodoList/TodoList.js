@@ -1,3 +1,4 @@
+import { isContentEditable } from "@testing-library/user-event/dist/utils";
 import React, { useState } from "react";
 
 const TodoList = ({ todo, setTodo }) => {
@@ -6,6 +7,16 @@ const TodoList = ({ todo, setTodo }) => {
 
   function deleteTodo(id) {
     const newTodo = [...todo].filter((item) => item.id !== id);
+    setTodo(newTodo);
+  }
+
+  function statusTodo(id) {
+    const newTodo = [...todo].filter((item) => {
+      if (item.id === id) {
+        item.status = !item.status;
+      }
+      return item;
+    });
     setTodo(newTodo);
   }
 
