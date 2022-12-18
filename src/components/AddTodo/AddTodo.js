@@ -2,17 +2,12 @@ import React, { useState } from "react";
 
 const AddTodo = ({ todo, setTodo }) => {
   const [value, setValue] = useState("");
-
   function saveTodo() {
-    setTodo([
-      ...todo,
-      {
-        id: Math.random(),
-        title: value,
-        status: true,
-      },
-    ]);
-    setValue("");
+    setTodo([...todo], {
+      id: Math.random(),
+      title: value,
+      status: true,
+    });
   }
 
   return (
@@ -20,8 +15,8 @@ const AddTodo = ({ todo, setTodo }) => {
       <input
         type="text"
         value={value}
+        onChange={(e) => setValue((e) => setValue(e.target.value))}
         placeholder="Enter something..."
-        onChange={(e) => setValue(e.target.value)}
       />
       <button onClick={saveTodo}>Save</button>
     </div>
