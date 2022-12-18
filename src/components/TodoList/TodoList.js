@@ -35,7 +35,7 @@ const TodoList = ({ todo, setTodo }) => {
                 onChange={(e) => setValue(e.target.value)}
                 value={value}
               />
-              <button>Save</button>
+              <button onClick={()=>saveTodo(item.id)}>Save</button>
             </div>
           ) : (
             <div>
