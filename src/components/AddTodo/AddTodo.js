@@ -2,13 +2,17 @@ import React, { useState } from "react";
 
 const AddTodo = () => {
   const [value, setValue] = useState("");
+
+  function saveTodo(){
+    
+  }
   return (
     <div>
       <input type="text"
        value={value}
        placeholder='Enter something...'
        onChange={(e)=>setValue(e.target.value)} />
-       <button></button>
+       <button onClick={saveTodo}>Add</button>
     </div>
   );
 };
