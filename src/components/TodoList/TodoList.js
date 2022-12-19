@@ -24,9 +24,20 @@ const TodoList = ({ todo, setTodo }) => {
     setValue(title);
   }
 
+  function saveTodo(id) {
+    const newTodo = [...todo].map((item) => {
+      if (item.id === id) {
+        item.title = value;
+      }
+      return item;
+    });
+    setTodo(newTodo);
+    setEdit(null);
+  }
+
   return (
     <div>
-      {todo.map((item,id) => (
+      {todo.map((item, id) => (
         <div key={item.id}>
           {edit === id ? (
             <div>
@@ -35,7 +46,7 @@ const TodoList = ({ todo, setTodo }) => {
                 onChange={(e) => setValue(e.target.value)}
                 value={value}
               />
-              <button onClick={()=>saveTodo(item.id)}>Save</button>
+              <button onClick={() => saveTodo(item.id)}>Save</button>
             </div>
           ) : (
             <div>

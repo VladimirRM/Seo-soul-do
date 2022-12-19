@@ -1,31 +1,12 @@
-import React, { useState } from "react";
+import React from 'react'
 
-const AddTodo = ({ todo, setTodo }) => {
-  const [value, setValue] = useState("");
-
-  function saveTodo(id) {
-    setTodo([
-      ...todo,
-      {
-        id: Math.random(),
-        title: value,
-        status: true,
-      },
-    ]);
-    setValue("");
-  }
-
+const AddTodo = () => {
   return (
     <div>
-      <input
-        type="text"
-        value={value}
-        placeholder="Enter something..."
-        onChange={(e) => setValue(e.target.value)}
-      />
-      <button onClick={() => saveTodo()}>Add</button>
+      <input type="text" />
     </div>
-  );
-};
+  )
+}
 
-export default AddTodo;
+export default AddTodo
+<input type="text" />
