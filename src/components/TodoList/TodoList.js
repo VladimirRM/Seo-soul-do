@@ -7,7 +7,12 @@ const [value,setValue]= useState('')
 
   return (
     <div>
-
+         {todo.map((item)=>(
+          <div key={item.id}>
+            <div>{item.title}</div>
+            <button>Delete</button>
+          </div>
+         ))}
     </div>
   )
 }
