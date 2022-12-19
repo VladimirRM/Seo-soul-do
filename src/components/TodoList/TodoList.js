@@ -5,12 +5,16 @@ const TodoList = ({todo,setTodo}) => {
 const [edit,setEdit]=useState(null)
 const [value,setValue]= useState('')
 
+function deleteTodo(id){
+       const newTodo = []
+}
+
   return (
     <div>
          {todo.map((item)=>(
           <div key={item.id}>
             <div>{item.title}</div>
-            <button>Delete</button>
+            <button onClick={()=>deleteTodo(item.id)}>Delete</button>
           </div>
          ))}
     </div>
