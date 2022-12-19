@@ -9,8 +9,14 @@ const TodoList = ({ todo, setTodo }) => {
     setTodo(newTodo);
   }
 
-  function statusTodo(){
-    
+  function statusTodo(id) {
+    const newTodo = [...todo].filter((item) => {
+      if (item.id === id) {
+        item.status = !item.status;
+      }
+      return item;
+    });
+    setTodo(newTodo);
   }
 
   return (
