@@ -23,21 +23,21 @@ const TodoList = ({ todo, setTodo }) => {
   }
 
   function saveTodo(id) {
-    const newTodo = [...todo].map(item => {
+    const newTodo = [...todo].map((item) => {
       if (item.id === id) {
         item.title = value;
       }
-      return item
+      return item;
     });
-    setTodo(newTodo)
-    setEdit(null)
+    setTodo(newTodo);
+    setEdit(null);
   }
 
   return (
     <div>
       {todo.map((item, id) => (
         <div key={item.id}>
-          {edit === id ? (
+          {edit === item.id ? (
             <div>
               <input
                 type="text"
@@ -48,7 +48,7 @@ const TodoList = ({ todo, setTodo }) => {
           ) : (
             <div>{item.title}</div>
           )}
-          {edit === id ? (
+          {edit === item.id ? (
             <div>
               <button onClick={() => saveTodo(item.id)}>Save</button>
             </div>

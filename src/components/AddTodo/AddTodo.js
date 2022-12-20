@@ -12,6 +12,7 @@ const AddTodo = ({ todo, setTodo }) => {
         status: true,
       },
     ]);
+    setValue('')
   }
   return (
     <div>
