@@ -1,6 +1,17 @@
 import React, {useState} from 'react'
 
 const TodoList = () => {
+const [edit,setEdit]=useState(null)
+const [value,setValue]=useState('')
+
+
+
+function deleteTodo(id){
+  
+}
+
+
+
   return (
     <div>
       {todo.map((item)=>(
