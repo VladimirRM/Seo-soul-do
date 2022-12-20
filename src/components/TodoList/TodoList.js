@@ -8,7 +8,7 @@ const [value,setValue]=useState('')
 
 function deleteTodo(id){
      const newTodo = [...todo].filter((item)=>item.id !==id)
-     set
+     setTodo(newTodo)
 }
 
 
