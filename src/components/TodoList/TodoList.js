@@ -24,6 +24,16 @@ const [value,setValue]=useState('')
     <div>
       {todo.map((item) => (
         <div key={item.id}>
+          {
+              edit===item.id ?
+              <div>
+                <input type="text" 
+                value={value}
+                onChange={(e)=>setValue(e.target.value)}/>
+                <button onClick={saveTodo(item.id)}>Save</button>
+              </div>
+
+          }
           <div>{item.title}</div>
           <button onClick={() => deleteTodo(item.id)}>Delete</button>
           <button onClick={() => deleteTodo(item.id,item.title)}>Edit</button>
