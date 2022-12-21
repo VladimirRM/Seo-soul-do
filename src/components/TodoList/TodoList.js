@@ -1,8 +1,11 @@
 import React,{useState} from 'react'
 
-const TodoList = () => {
+const TodoList = ({todo,setTodo}) => {
+
+
+  
   return (
-    <div>TodoList</div>
+    <div>{todo}</div>
   )
 }
 
