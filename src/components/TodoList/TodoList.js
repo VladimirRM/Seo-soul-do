@@ -1,7 +1,12 @@
 import React,{useState} from 'react'
 
 const TodoList = ({todo,setTodo}) => {
-      
+ 
+  
+  function deleteTodo(id){
+    const newTodo = [...todo].filter((item)=>item.id !==id)
+    setTodo(newTodo)
+  }
 
   
   return (
