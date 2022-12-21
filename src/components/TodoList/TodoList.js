@@ -14,6 +14,7 @@ const TodoList = ({todo,setTodo}) => {
       <div key={item.id}>
         <div>{item.title}</div>
         <button onClick={()=>deleteTodo(item.id)}>Delete</button>
+        <button onClick={()=>statusTodo(item.id)}>Open/Close</button>
       </div>
     ))}</div>
   )
