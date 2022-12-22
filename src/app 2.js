@@ -4,6 +4,8 @@
 // import AddTodo from './components/AddTodo/AddTodo'
 // import './App.css'
 
+import { Container } from "react-bootstrap"
+
 
 
 const App = () => {
@@ -29,11 +31,11 @@ const App = () => {
   ])
 
   return (
-    <div>
+    <Container>
      <Header/>
      <AddTodo setTodo={setTodo} todo={todo}/>
      <TodoList todo={todo} setTodo={setTodo}/>
-    </div>
+    </Container>
   )
 }
 

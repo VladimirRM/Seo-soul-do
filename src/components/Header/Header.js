@@ -1,12 +1,15 @@
-import React from 'react'
-import s from './Header.module.css'
+import React from "react";
+import { Row, Col } from "react-bootstrap";
+import s from "./Header.module.css";
 
 const Header = () => {
   return (
-    <div className={s.root}>
-      Todo List
-    </div>
-  )
-}
+    <Row>
+      <Col>
+        <div className={s.root}>Todo List</div>
+      </Col>
+    </Row>
+  );
+};
 
-export default Header
+export default Header;
