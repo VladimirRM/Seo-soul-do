@@ -8,7 +8,15 @@ const TodoList = ({ todo, setTodo }) => {
     const newTodo = [...todo].filter((item) => item.id !== id);
     setTodo(newTodo);
   }
-  function statusTodo(id) {}
+  function statusTodo(id) {
+    const newTodo = [...todo].filter((item) => {
+      if (item.id === id) {
+        item.status = !item.status;
+      }
+      return item;
+    });
+    setTodo(newTodo);
+  }
 
   return (
     <div>
