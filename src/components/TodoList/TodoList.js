@@ -4,6 +4,15 @@ const TodoList = ({todo,setTodo}) => {
 
   const [edit,setEdit]= useState(null)
   const [value,setValue]= useState('')
+
+function deleteTodo(id){
+  
+}
+function statusTodo(id){
+
+}
+
+
   return (
     <div>
       {todo.map((item)=>(
