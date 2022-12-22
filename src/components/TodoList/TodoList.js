@@ -18,12 +18,18 @@ const TodoList = ({ todo, setTodo }) => {
     setTodo(newTodo);
   }
 
+  function editTodo(id, title) {
+    setEdit(id);
+    setValue(title);
+  }
+
   return (
     <div>
       {todo.map((item) => (
         <div key={item.id}>
           <div>{item.title}</div>
           <button onClick={() => deleteTodo(item.id)}>Delete</button>
+          <button onClick={() => editTodo(item.id, item.title)}>Edit</button>
           <button onClick={() => statusTodo(item.id)}>Open/Close</button>
         </div>
       ))}
