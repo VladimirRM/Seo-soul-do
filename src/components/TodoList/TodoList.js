@@ -25,18 +25,34 @@ const TodoList = ({ todo, setTodo }) => {
 
   return (
     <div>
-      {todo.map((item,id) => (
+      {todo.map((item, id) => (
         <div key={item.id}>
-          {edit ===item.id
-          <input type="text"
-           />
-          
-          
-          }
-          <div>{item.title}</div>
-          <button onClick={() => deleteTodo(item.id)}>Delete</button>
-          <button onClick={() => editTodo(item.id, item.title)}>Edit</button>
-          <button onClick={() => statusTodo(item.id)}>Open/Close</button>
+          {edit === item.id ? (
+            <div>
+              <input
+                type="text"
+                value={value}
+                onChange={(e) => setValue(e.target.value)}
+              />
+            </div>
+          ) : (
+            <div>
+              <div>{item.title}</div>
+            </div>
+          )}
+          {edit === item.id ? (
+            <div>
+              <button>Save</button>
+            </div>
+          ) : (
+            <div>
+              <button onClick={() => deleteTodo(item.id)}>Delete</button>
+              <button onClick={() => editTodo(item.id, item.title)}>
+                Edit
+              </button>
+              <button onClick={() => statusTodo(item.id)}>Open/Close</button>
+            </div>
+          )}
         </div>
       ))}
     </div>
